@@ -4,6 +4,9 @@ MAINTAINER sandeep.chitte@bankofthewest.com
 
 USER root
 
+ENV ADMIN_PASS 1234567
+ENV CERT_PASS 98786654
+
 # Install prepare infrastructure
 RUN yum -y update && \
  yum -y install wget && \
