@@ -36,7 +36,6 @@ RUN chmod +x ${CATALINA_HOME}/bin/*sh && \
   chmod +x /run.sh && \
   rm -rf apache-tomcat-8.5.47.tar.gz
 
-
 # Create tomcat user
 RUN groupadd -r tomcat && \
  useradd -g tomcat -d ${CATALINA_HOME} -s /sbin/nologin  -c "Tomcat user" tomcat && \
