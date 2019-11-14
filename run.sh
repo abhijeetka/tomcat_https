@@ -49,12 +49,12 @@ keytool -genkey -noprompt \
 -keypass $CERT_PASSWORD \
 -validity 360 \
 -keysize 2048 \
--keystore keystore.jks
+-keystore /usr/local/tomcat/keystore.jks
 
 # Uncomment SSL section in server.xml
 # and insert SSL certificate information
 sed -i '$!N;s/<!--\s*\n\s*<Connector port="8443"/<Connector port="8443" keyAlias="selfsigned" \
-               keystoreFile="\/keystore.jks" keystorePass="'$CERT_PASSWORD'"/g;P;D' \
+               keystoreFile="\/usr\/local\/tomcat\/keystore.jks" keystorePass="'$CERT_PASSWORD'"/g;P;D' \
                ${CATALINA_HOME}/conf/server.xml
 
 sed -i '$!N;s/clientAuth="false" sslProtocol="TLS" \/>\n\s*-->/clientAuth="false" sslProtocol="TLS" \/>/g;P;D' \
