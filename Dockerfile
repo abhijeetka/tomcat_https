@@ -26,7 +26,7 @@ RUN yum -y update && \
 
 
 RUN mkdir -p /usr/local/
-ADD apache-tomcat-8.5.47.tar.gz /usr/local/
+ADD apache-tomcat-8.5.47.tar.gz .
 RUN tar xvf apache-tomcat-8.5.47.tar.gz -C ${CATALINA_HOME} --strip-components=1
 
 COPY server.xml ${CATALINA_HOME}/conf/server.xml
